@@ -1,268 +1,209 @@
 # Holdeye
 
-![LaCertif Logo](logo.png)
+![Holdeye Logo](logo.png)
 
-## Stack Technique
+## 📌 Project Overview
+
+**Holdeye** is a full-stack web application designed to track and manage crypto and NFT investments. It enables users to create and monitor multiple portfolios across different investment strategies (trading, staking, liquidity pools, ICOs, etc.). With real-time data, advanced analytics, and an intuitive dashboard, Holdeye offers a powerful and user-friendly experience for active investors.
+
+---
+
+## 🚀 Features
+
+- **Multi-Portfolio Management** – Create multiple investment portfolios, organized by strategy or asset type.
+- **Real-Time Tracking** – Access live data and performance metrics for crypto and NFT holdings.
+- **Advanced Analytics** – Visualize key statistics, trends, and portfolio allocations with detailed graphs.
+- **All-in-One Dashboard** – Monitor historical performance, liquidity, balance distribution, and more.
+- **Cross-Device Access** – Seamless experience across desktop and mobile platforms.
+
+---
+
+## 🛠️ Tech Stack
 
 ### Backend
 - **Framework**: [Fastify](https://www.fastify.io/)
 - **ORM**: [Prisma](https://www.prisma.io/)
 - **Database**: PostgreSQL
 - **Authentication**: JWT
-- **Documentation**: Swagger
+- **API Docs**: Swagger
 - **Deployment**: Docker, Docker Compose, Serverless (AWS Lambda)
 
 ### Frontend
 - **Framework**: [React](https://reactjs.org/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
-- **State Management**: React Context API
 - **Routing**: React Router
+- **State Management**: React Context API
 - **Real-Time Communication**: WebSocket
 - **Styling**: CSS Modules
-- **Linting and Formatting**: ESLint, Prettier
-- **Type Checking**: TypeScript
-- **Internationalization**: i18n
+- **i18n**: Internationalization support
+- **Tooling**: ESLint, Prettier, TypeScript
 - **Deployment**: Static Hosting (S3, CloudFront)
 
 ### DevOps
 - **CI/CD**: GitHub Actions
-- **Containerization**: Docker
+- **Containers**: Docker
 - **Orchestration**: Docker Compose
 - **Version Control**: Git
 
-## Description du Projet : Crypto & NFT Investment Tracker
-
-### Overview
-Welcome to the Crypto & NFT Investment Tracker! This all-in-one solution is designed to cater to the needs of active investors in the crypto and NFT space. Our platform provides comprehensive management of your investments, enabling you to create and monitor multiple portfolios tailored to various types of investments including trading, staking, liquidity pools, ICOs, and more.
-
-### Features
-- **Multi-Portfolio Management**: Create and manage multiple portfolios to keep your investments organized by type.
-- **Real-Time Tracking**: Stay updated with real-time data and insights for all your crypto and NFT investments.
-- **Detailed Analytics**: Benefit from detailed graphs and analytics for each portfolio to help you make informed decisions.
-- **Comprehensive Dashboard**: Get a clear and precise overview of your investments with a summary dashboard that includes:
-  - Cryptocurrency allocation
-  - Historical values
-  - Balance and liquidity statistics
-- **User-Friendly Interface**: Navigate through your investments with ease using our intuitive and user-friendly interface.
-
-### Benefits
-- **Precision and Efficiency**: Simplify the tracking of your investments and ensure precision with our detailed analytics and comprehensive dashboard.
-- **Adaptability**: Customize your portfolios to suit different investment strategies and stay flexible in a dynamic market.
-- **Accessibility**: Access your investment data anytime, anywhere, with a platform designed for seamless use across devices.
-
-### License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Ce repository contient un projet web complet, composé d’un backend (API REST construite sur Fastify & Prisma) et d’un frontend (React + Vite). Il inclut également des workflows GitHub pour l’intégration et le déploiement continus, ainsi qu’une configuration pour Docker. Le but est de proposer un socle fonctionnel pour développer des applications web, avec une séparation claire entre le front et le back, et un outillage complet (tests, scripts d’init, linting, etc.).
-
-## Table des matières
-
-1. [Aperçu du projet](#aperçu-du-projet)  
-2. [Arborescence générale](#arborescence-générale)  
-3. [Prérequis](#prérequis)  
-4. [Installation et configuration](#installation-et-configuration)
-   - [Configuration des variables d’environnement](#configuration-des-variables-denvironnement)
-5. [Lancer le projet](#lancer-le-projet)
-   - [Lancer le backend](#lancer-le-backend)
-   - [Lancer le frontend](#lancer-le-frontend)
-   - [Utiliser Docker](#utiliser-docker)
-6. [Scripts utiles](#scripts-utiles)
-7. [CI/CD – GitHub Workflows](#cicd--github-workflows)
-8. [Contribuer](#contribuer)
-9. [Licence](#licence)
-
 ---
 
-## 1. Aperçu du projet
-
-- **Backend** :  
-  - Basé sur [Fastify](https://www.fastify.io/) et [Prisma](https://www.prisma.io/) (avec PostgreSQL).  
-  - Gère l’authentification JWT, la pagination, la configuration de CORS/Helmet, un système de gestion d’erreurs centralisé et la documentation Swagger intégrée.  
-  - Déploiement possible via Docker et Docker Compose, ou [Serverless](https://www.serverless.com/) (AWS Lambda par exemple).
-
-- **Frontend** :  
-  - Développé en [React](https://reactjs.org/) + [Vite](https://vitejs.dev/).  
-  - Inclut un exemple de chat en temps réel, une gestion de la navigation avec React Router, un système de Tchat via WebSocket, ainsi que quelques composants d’interface (Sidebar, Layout Dashboard, etc.).  
-  - Configuré avec ESLint, Prettier, TypeScript, etc.  
-  - Prévu pour être déployé sur un hébergement statique (ou via Serverless Finch / CloudFront-S3).
-
-- **Workflows GitHub** :  
-  - *ci-frontend.yml* : Exécute la CI du frontend, avec installation, tests, build, etc.  
-  - *cd-frontend-deployment.yml* : Déploiement continu du frontend sur un environnement défini (S3, etc.).
-
----
-
-## 2. Arborescence générale
+## 🗂️ Project Structure
 
 ```
-redboarddev-atlas-genai/
-├── README.md                 # (ce fichier)
+holdeye/
+├── README.md
 ├── backend/
-│   ├── Dockerfile
-│   ├── docker-compose.yml
-│   ├── package.json
-│   ├── serverless.yml
-│   ├── tsconfig.json
 │   ├── app/
-│   │   ├── app.ts            # Point d’entrée Fastify
-│   │   ├── env/
-│   │   │   └── .env_example
-│   │   └── src/
-│   │       ├── routes/
-│   │       ├── services/
-│   │       ├── middlewares/
-│   │       ├── libs/
-│   │       ├── entities/
-│   │       ├── config/
-│   │       └── ...
+│   │   ├── app.ts
+│   │   ├── env/.env_example
+│   │   └── src/ (routes, services, middleware, etc.)
 │   ├── prisma/
 │   │   ├── schema.prisma
 │   │   └── .env_example
-│   └── usefull-scripts/
-│       ├── generate-local.sh
-│       ├── init-docker.sh
-│       ├── migrate-local.sh
-│       ├── start-docker.sh
-│       └── stop_docker.sh
-├── frontend/
 │   ├── Dockerfile
-│   ├── vite.config.ts
-│   ├── package.json
-│   ├── public/
-│   │   └── locales/          # Fichiers de traduction (i18n)
-│   └── src/
-│       ├── App.tsx
-│       ├── components/
-│       ├── services/
-│       ├── routes/
-│       └── ...
-└── .github/
-    └── workflows/
-        ├── ci-frontend.yml
-        └── cd-frontend-deployment.yml
+│   ├── docker-compose.yml
+│   ├── serverless.yml
+│   └── usefull-scripts/
+├── frontend/
+│   ├── public/locales/
+│   ├── src/
+│   │   ├── App.tsx
+│   │   ├── components/
+│   │   ├── routes/
+│   ├── Dockerfile
+│   └── vite.config.ts
+└── .github/workflows/
+    ├── ci-frontend.yml
+    └── cd-frontend-deployment.yml
 ```
 
 ---
 
-## 3. Prérequis
+## 📦 Prerequisites
 
-Pour utiliser ce projet localement ou lancer la CI/CD, vous aurez besoin des éléments suivants :
+Make sure you have the following tools installed:
 
 - **Node.js** ≥ 18.x  
-- **npm** ≥ 8.x (fourni avec Node.js), ou **yarn**  
-- **Docker** ≥ 20.10 (si vous utilisez Docker)  
-- **Docker Compose** ≥ 1.29 (pour le docker-compose.yml du backend)  
-- **Serverless CLI** (optionnel, si vous comptez déployer sur AWS Lambda)  
+- **npm** ≥ 8.x or **yarn**  
+- **Docker** ≥ 20.10  
+- **Docker Compose** ≥ 1.29  
+- **Serverless CLI** (optional, for AWS Lambda deployments)
+
+```bash
+npm install -g serverless
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/holdeye.git
+cd holdeye
+```
+
+### 2. Install Dependencies
+
+- **Backend**:
   ```bash
-  npm install -g serverless
+  cd backend
+  npm install
+  ```
+- **Frontend**:
+  ```bash
+  cd ../frontend
+  npm install
   ```
 
----
+### 3. Environment Variables
 
-## 4. Installation et configuration
-
-1. **Cloner le repository**  
-
-   ```bash
-   git clone https://github.com/votre-nom-utilisateur/redboarddev-atlas-genai.git
-   cd redboarddev-atlas-genai
-   ```
-
-2. **Installer les dépendances**  
-   - Pour le backend :
-     ```bash
-     cd backend
-     npm install
-     ```
-   - Pour le frontend :
-     ```bash
-     cd ../frontend
-     npm install
-     ```
-
-### Configuration des variables d’environnement
-
-- **Backend**  
-  - Dans `backend/app/env/.env_example`, vous trouverez un exemple de configuration des variables nécessaires (API_PORT, POSTGRES_USER, POSTGRES_PASSWORD, etc.).  
-  - Copiez le fichier en `.env` et adaptez-le à votre environnement :
-
-    ```bash
-    cp backend/app/env/.env_example backend/app/env/.env
-    ```
-
-  - Faites de même pour `prisma/.env_example` si nécessaire (DATABASE_URL, etc.).
-
-- **Frontend**  
-  - Il peut exister un équivalent `.env` pour définir l’URL de l’API, etc.  
-  - Reportez-vous à `frontend/config/stages-urls.json` ou `editApiUrl.js` si vous souhaitez personnaliser les URLs en fonction de l’environnement.
+- **Backend**:
+  ```bash
+  cp backend/app/env/.env_example backend/app/env/.env
+  cp backend/prisma/.env_example backend/prisma/.env
+  ```
+- **Frontend**:
+  Set API base URL and other configs in `.env` or `frontend/config/stages-urls.json`.
 
 ---
 
-## 5. Lancer le projet
+## 🧪 Running the Project
 
-### Lancer le backend
+### Backend (Node.js)
 
-Vous pouvez lancer le backend soit directement en local (Node.js), soit via Docker.
+```bash
+cd backend
+npm run dev
+# API available at http://localhost:3000
+```
 
-#### En local (Node.js)
+### Frontend (Vite)
 
-1. Rendez-vous dans le dossier `backend`.
-2. Assurez-vous que votre base de données est accessible (via docker ou un service local).
-3. Exécutez :
-   ```bash
-   npm run dev
-   ```
-4. L’API est normalement accessible sur [http://localhost:3000](http://localhost:3000) (ou le port configuré dans votre `.env`).
+```bash
+cd frontend
+npm run dev
+# App running at http://localhost:5173
+```
 
-#### Lancer le frontend
+### Using Docker (Backend)
 
-Dans le dossier `frontend` :
-
-1. Démarrez le serveur de développement :
-   ```bash
-   npm run dev
-   ```
-2. Accédez ensuite à l’URL fournie dans la console (souvent [http://localhost:5173](http://localhost:5173)).
-
-### Utiliser Docker
-
-Le projet peut aussi être lancé via Docker Compose pour le backend. Les scripts se trouvent dans `backend/usefull-scripts`.
-
-1. **Démarrer les conteneurs** (backend + DB) :
-   ```bash
-   cd backend
-   ./usefull-scripts/start-docker.sh
-   ```
-2. **Initialiser la base de données** (migrations, seed) :
-   ```bash
-   ./usefull-scripts/init-docker.sh
-   ```
-3. **Vérifier** : l’API devrait répondre sur le port `API_PORT` défini dans votre `.env`.  
-4. Le frontend peut également être containerisé (Dockerfile dans `frontend`), selon votre workflow habituel. Un exemple de `docker-compose` unifié pourrait être ajouté si besoin.
+```bash
+cd backend/usefull-scripts
+./start-docker.sh          # Starts backend + PostgreSQL containers
+./init-docker.sh           # Runs Prisma generation, migration & seeding
+```
 
 ---
 
-## 6. Scripts utiles
+## 🔁 Useful Scripts
 
-- **Backend** :  
-  - `npm run dev` : démarre le serveur Fastify en mode développement (watch).  
-  - `npm run prisma:generate` : génère le client Prisma.  
-  - `npm run prisma:migrate` : applique les migrations en mode dev.  
-  - `npm run prisma:seed` : lance le script de seed.  
-  - `npm run lint:check` / `lint:fix` : vérifie / corrige le code via ESLint.  
-  - `npm run format:check` / `format:fix` : vérifie / formate via Prettier.  
+### Backend
 
-- **Frontend** :  
-  - `npm run dev` : lance Vite en mode dev.  
-  - `npm run build` : construit l’application pour la production.  
-  - `npm run preview` : prévisualise le build.  
+| Command                  | Description                                  |
+|--------------------------|----------------------------------------------|
+| `npm run dev`            | Start Fastify dev server (with watch)        |
+| `npm run prisma:generate`| Generate Prisma client                       |
+| `npm run prisma:migrate` | Run migrations                               |
+| `npm run prisma:seed`    | Seed initial data                            |
+| `npm run lint:check`     | Lint code                                    |
+| `npm run format:check`   | Check formatting with Prettier               |
 
-- **Scripts Docker (backend/usefull-scripts)** :  
-  - `start-docker.sh` : lance Docker Compose (API + Postgres).  
-  - `stop_docker.sh` : stoppe et supprime les conteneurs.  
-  - `init-docker.sh` : génère le client Prisma, exécute migrations et seed.  
-  - `generate-local.sh`, `migrate-local.sh` : utilitaires pour générer le client Prisma et lancer des migrations en local.
+### Frontend
+
+| Command           | Description                        |
+|-------------------|------------------------------------|
+| `npm run dev`     | Start Vite dev server              |
+| `npm run build`   | Build production bundle            |
+| `npm run preview` | Preview production build locally   |
+
+### Docker Scripts (backend/usefull-scripts)
+
+| Script               | Description                                  |
+|----------------------|----------------------------------------------|
+| `start-docker.sh`    | Start containers (API + DB)                  |
+| `stop_docker.sh`     | Stop and remove containers                   |
+| `init-docker.sh`     | Run migrations, seed DB, and start services  |
+| `generate-local.sh`  | Prisma generate (local setup)                |
+| `migrate-local.sh`   | Prisma migrate (local setup)                 |
 
 ---
 
-![infra as a code](infra-as-a-code.png)
+## 🧪 GitHub Workflows
+
+- **`ci-frontend.yml`** – Frontend build and test pipeline
+- **`cd-frontend-deployment.yml`** – Continuous deployment (e.g., to S3 or CloudFront)
+
+---
+
+## 🤝 Contributing
+
+Want to contribute? Feel free to fork the repo and open a pull request. We welcome contributions of all kinds — code, bugs, docs, and feedback.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.  
+See the [LICENSE](LICENSE) file for more details.
