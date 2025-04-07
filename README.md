@@ -1,4 +1,57 @@
-# Projet Atlas – GenAI
+# Holdeye
+
+![LaCertif Logo](logo.png)
+
+## Stack Technique
+
+### Backend
+- **Framework**: [Fastify](https://www.fastify.io/)
+- **ORM**: [Prisma](https://www.prisma.io/)
+- **Database**: PostgreSQL
+- **Authentication**: JWT
+- **Documentation**: Swagger
+- **Deployment**: Docker, Docker Compose, Serverless (AWS Lambda)
+
+### Frontend
+- **Framework**: [React](https://reactjs.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **State Management**: React Context API
+- **Routing**: React Router
+- **Real-Time Communication**: WebSocket
+- **Styling**: CSS Modules
+- **Linting and Formatting**: ESLint, Prettier
+- **Type Checking**: TypeScript
+- **Internationalization**: i18n
+- **Deployment**: Static Hosting (S3, CloudFront)
+
+### DevOps
+- **CI/CD**: GitHub Actions
+- **Containerization**: Docker
+- **Orchestration**: Docker Compose
+- **Version Control**: Git
+
+## Description du Projet : Crypto & NFT Investment Tracker
+
+### Overview
+Welcome to the Crypto & NFT Investment Tracker! This all-in-one solution is designed to cater to the needs of active investors in the crypto and NFT space. Our platform provides comprehensive management of your investments, enabling you to create and monitor multiple portfolios tailored to various types of investments including trading, staking, liquidity pools, ICOs, and more.
+
+### Features
+- **Multi-Portfolio Management**: Create and manage multiple portfolios to keep your investments organized by type.
+- **Real-Time Tracking**: Stay updated with real-time data and insights for all your crypto and NFT investments.
+- **Detailed Analytics**: Benefit from detailed graphs and analytics for each portfolio to help you make informed decisions.
+- **Comprehensive Dashboard**: Get a clear and precise overview of your investments with a summary dashboard that includes:
+  - Cryptocurrency allocation
+  - Historical values
+  - Balance and liquidity statistics
+- **User-Friendly Interface**: Navigate through your investments with ease using our intuitive and user-friendly interface.
+
+### Benefits
+- **Precision and Efficiency**: Simplify the tracking of your investments and ensure precision with our detailed analytics and comprehensive dashboard.
+- **Adaptability**: Customize your portfolios to suit different investment strategies and stay flexible in a dynamic market.
+- **Accessibility**: Access your investment data anytime, anywhere, with a platform designed for seamless use across devices.
+
+### License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 Ce repository contient un projet web complet, composé d’un backend (API REST construite sur Fastify & Prisma) et d’un frontend (React + Vite). Il inclut également des workflows GitHub pour l’intégration et le déploiement continus, ainsi qu’une configuration pour Docker. Le but est de proposer un socle fonctionnel pour développer des applications web, avec une séparation claire entre le front et le back, et un outillage complet (tests, scripts d’init, linting, etc.).
 
