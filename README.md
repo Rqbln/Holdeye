@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🗺️ Holdeye
+# 💰 Holdeye
 
-**Interactive mapping and chat application with real-time capabilities**
+**Full-stack platform to track, analyze, and manage crypto and NFT investments across multiple portfolios in real time**
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6.0-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -42,12 +42,14 @@
 
 ## 🎯 About
 
-**Holdeye** is a modern full-stack web application that combines interactive mapping capabilities with real-time chat functionality. Built with cutting-edge technologies, it provides a seamless user experience for geographic data visualization and communication.
+**Holdeye** is a comprehensive full-stack web application designed to track and manage crypto and NFT investments. It enables users to create and monitor multiple portfolios across different investment strategies (trading, staking, liquidity pools, ICOs, etc.). With real-time data, advanced analytics, and an intuitive dashboard, Holdeye offers a powerful and user-friendly experience for active investors.
 
 ### Key Highlights
 
-- 🗺️ **Interactive Maps** – Powered by Leaflet and MapTiler for rich geographic visualization
-- 💬 **Real-Time Chat** – WebSocket-based chat system with message persistence
+- 💼 **Multi-Portfolio Management** – Organize investments across multiple portfolios by strategy or asset type
+- 📊 **Real-Time Analytics** – Live data and performance metrics for crypto and NFT holdings
+- 📈 **Advanced Visualizations** – Detailed graphs and charts for portfolio analysis
+- 🔄 **Real-Time Updates** – WebSocket integration for instant data synchronization
 - 🚀 **Serverless Ready** – Deployable on AWS Lambda for scalable infrastructure
 - 🐳 **Containerized** – Docker support for easy local development and deployment
 - 🔒 **Secure** – JWT authentication and comprehensive security middleware
@@ -57,19 +59,33 @@
 
 ## ✨ Features
 
-### 🗺️ Mapping Features
-- ✅ Interactive map visualization with MapTiler integration
-- ✅ Custom polygon drawing and editing
-- ✅ Marker clustering and heat maps
-- ✅ Geographic search functionality
-- ✅ Custom scale controls and print capabilities
+### 💼 Portfolio Management
+- ✅ Create and manage multiple investment portfolios
+- ✅ Organize portfolios by strategy (trading, staking, liquidity pools, ICOs)
+- ✅ Track assets by type (crypto, NFT)
+- ✅ Portfolio performance tracking
+- ✅ Historical data analysis
 
-### 💬 Chat Features
-- ✅ Real-time chat interface
-- ✅ Message history persistence
-- ✅ Multiple chat sessions support
-- ✅ Typing indicators
-- ✅ Message timestamps
+### 📊 Analytics & Tracking
+- ✅ Real-time price tracking for crypto assets
+- ✅ NFT collection monitoring
+- ✅ Performance metrics and statistics
+- ✅ Portfolio allocation visualization
+- ✅ Balance distribution analysis
+- ✅ Liquidity monitoring
+
+### 📈 Dashboard Features
+- ✅ All-in-one dashboard for comprehensive overview
+- ✅ Interactive charts and graphs
+- ✅ Key statistics visualization
+- ✅ Trend analysis
+- ✅ Customizable views
+
+### 🔄 Real-Time Capabilities
+- ✅ WebSocket integration for live updates
+- ✅ Real-time price feeds
+- ✅ Instant portfolio value updates
+- ✅ Live transaction tracking
 
 ### 🔧 Backend Features
 - ✅ RESTful API with Fastify
@@ -78,7 +94,7 @@
 - ✅ Rate limiting and security headers
 - ✅ Error handling and validation
 - ✅ Database migrations with Prisma
-- ✅ AWS DynamoDB integration
+- ✅ AWS DynamoDB integration for real-time data
 
 ### 🎨 Frontend Features
 - ✅ Modern React application with TypeScript
@@ -86,6 +102,7 @@
 - ✅ Internationalization (i18n) support
 - ✅ Error boundaries and loading states
 - ✅ Context-based state management
+- ✅ Ant Design component library
 
 ---
 
@@ -98,7 +115,7 @@
 | [Fastify](https://www.fastify.io/) | 5.0.0 | High-performance web framework |
 | [Prisma](https://www.prisma.io/) | 5.22.0 | Next-generation ORM |
 | [PostgreSQL](https://www.postgresql.org/) | Latest | Relational database |
-| [AWS DynamoDB](https://aws.amazon.com/dynamodb/) | - | NoSQL database for chat |
+| [AWS DynamoDB](https://aws.amazon.com/dynamodb/) | - | NoSQL database for real-time data |
 | [JWT](https://jwt.io/) | 9.0.2 | Authentication tokens |
 | [Swagger](https://swagger.io/) | 9.1.0 | API documentation |
 | [AWS Lambda](https://aws.amazon.com/lambda/) | - | Serverless deployment |
@@ -111,11 +128,10 @@
 | [React](https://reactjs.org/) | 18.3.1 | UI library |
 | [TypeScript](https://www.typescriptlang.org/) | 5.2.2 | Type-safe JavaScript |
 | [Vite](https://vitejs.dev/) | 5.3.1 | Build tool and dev server |
-| [Leaflet](https://leafletjs.com/) | 1.9.4 | Interactive maps |
-| [MapTiler](https://www.maptiler.com/) | 4.0.2 | Map tiles provider |
 | [Ant Design](https://ant.design/) | 5.19.3 | UI component library |
 | [React Router](https://reactrouter.com/) | 6.25.1 | Client-side routing |
 | [CSS Modules](https://github.com/css-modules/css-modules) | - | Scoped styling |
+| [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) | - | Real-time communication |
 
 ### DevOps & Tools
 
@@ -133,7 +149,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                      Holdeye Architecture                      │
+│                    Holdeye Architecture                       │
 ├─────────────────────────────────────────────────────────────┤
 │                                                               │
 │  ┌──────────────┐      ┌──────────────┐      ┌──────────┐  │
@@ -141,15 +157,16 @@
 │  │   (Vite)     │ HTTP  │  (Lambda)    │ Prisma│          │  │
 │  └──────┬───────┘      └──────┬───────┘      └───────────┘  │
 │         │                      │                              │
+│         │ WebSocket            │                              │
 │         │                      │                              │
 │         │              ┌───────▼───────┐                      │
 │         │              │   DynamoDB    │                      │
-│         │              │   (Chat Data)  │                      │
+│         │              │ (Real-time)   │                      │
 │         │              └───────────────┘                      │
 │         │                                                      │
 │         │              ┌───────────────┐                      │
-│         └──────────────►│  MapTiler API │                      │
-│                        │  (Map Tiles)  │                      │
+│         └──────────────►│  Crypto APIs  │                      │
+│                        │ (Price Data)  │                      │
 │                        └───────────────┘                      │
 │                                                               │
 └─────────────────────────────────────────────────────────────┘
@@ -158,10 +175,10 @@
 ### Data Flow
 
 1. **Frontend** → React app serves the UI and handles user interactions
-2. **API Gateway** → Fastify routes handle HTTP requests
-3. **Database Layer** → Prisma manages PostgreSQL connections
-4. **Chat Storage** → DynamoDB stores chat messages
-5. **Map Services** → MapTiler provides map tiles and geocoding
+2. **API Gateway** → Fastify routes handle HTTP requests and WebSocket connections
+3. **Database Layer** → Prisma manages PostgreSQL connections for portfolio data
+4. **Real-Time Storage** → DynamoDB stores real-time price and transaction data
+5. **External APIs** → Integration with crypto/NFT price APIs for live data
 
 ---
 
@@ -271,16 +288,9 @@ This will:
 - Run database migrations
 - Seed initial data (if available)
 
-### MapTiler Configuration
+### Crypto/NFT API Integration
 
-Update the MapTiler API key in `frontend/src/components/MapComponent.tsx`:
-
-```typescript
-const mtLayer = new MaptilerLayer({
-  apiKey: "your-maptiler-api-key",
-  style: "your-style-id",
-});
-```
+Configure your crypto and NFT price API endpoints in the backend services. Update the API keys and endpoints in your environment variables.
 
 ---
 
@@ -361,7 +371,7 @@ holdeye/
 │   │       ├── repositories/         # Data access layer
 │   │       ├── routes/               # API routes
 │   │       │   ├── chat/            # Chat endpoints
-│   │       │   └── health/          # Health check
+│   │       │   └── health/           # Health check
 │   │       └── services/             # Business logic
 │   │           ├── chat-service.ts
 │   │           ├── dynamo-service.ts
@@ -420,6 +430,15 @@ http://localhost:3000/docs
 ```
 
 ### Available Endpoints
+
+#### Portfolio Endpoints
+
+- `GET /portfolios` - List all portfolios
+- `GET /portfolios/:id` - Get portfolio details
+- `POST /portfolios` - Create a new portfolio
+- `PUT /portfolios/:id` - Update a portfolio
+- `DELETE /portfolios/:id` - Delete a portfolio
+- `GET /portfolios/:id/transactions` - Get portfolio transactions
 
 #### Chat Endpoints
 
@@ -559,15 +578,14 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - [Fastify](https://www.fastify.io/) - Fast and low overhead web framework
 - [Prisma](https://www.prisma.io/) - Next-generation ORM
 - [React](https://reactjs.org/) - UI library
-- [Leaflet](https://leafletjs.com/) - Interactive maps
-- [MapTiler](https://www.maptiler.com/) - Map tiles provider
 - [Ant Design](https://ant.design/) - UI component library
+- [Vite](https://vitejs.dev/) - Next generation frontend tooling
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the Holdeye team**
+**Made with ❤️ to help you track and manage your crypto investments**
 
 [⬆ Back to top](#-holdeye)
 
